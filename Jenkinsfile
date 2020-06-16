@@ -14,14 +14,12 @@ pipeline {
                 """
             }
         }
-        stage("Reveal Git Secrets") {
-            steps {
-                sh """
-                    cd $WORKSPACE
-                    git init
-                    git-secret reveal -p '$gpg_passphrase'
-                """
-            }
-        }
+        stage("Init") {
+            environment {
+                GITTAG = sh (
+                    script: "git describe --abbrev=5 | tr -d '\t\n'",
+                    returnStdout: true
+                )
+       }
     }
 }
