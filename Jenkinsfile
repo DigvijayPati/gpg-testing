@@ -1,9 +1,5 @@
 pipeline {
-     agent { 
-        node { 
-            label 'test_slave' 
-        } 
-    }
+    agent any 
     environment {
         gpg_secret = credentials("gpg-secret")
         gpg_trust = credentials("gpg-trust")
