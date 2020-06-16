@@ -14,12 +14,5 @@ pipeline {
                 """
             }
         }
-        stage("Init") {
-            environment {
-                GITTAG = sh (
-                    script: "git describe --abbrev=5 | tr -d '\t\n'",
-                    returnStdout: true
-                )
-       }
-    }
+}
 }
