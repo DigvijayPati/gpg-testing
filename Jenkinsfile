@@ -17,7 +17,7 @@ pipeline {
         stage("Reveal Git Secrets") {
             steps {
                 sh """
-                    cd $WORKSPACE/$yoursecretfolder
+                    cd $WORKSPACE
                     git init
                     git-secret reveal -p '$gpg_passphrase'
                 """
