@@ -9,6 +9,7 @@ pipeline {
         stage("verify tag"){
             steps{
                 sh """
+                    gpg --list-keys
                     git tag
                     git verify-tag certified/safety_module/v1.0
                 """
