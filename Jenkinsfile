@@ -7,7 +7,7 @@ pipeline {
         stage("verify tag"){
             steps{
                 sh """
-                    gpg --import $gpg_secret
+                    gpg --list-keys
                 """
             }
         }
