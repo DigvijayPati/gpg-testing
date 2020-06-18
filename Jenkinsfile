@@ -9,7 +9,7 @@ pipeline {
         stage("verify tag"){
             steps{
                 sh """
-                    git verify-commit c30df378d445be82b806f5523781e51114645596
+                    git verify-commit 8225f09a95477f8bfe87d1e0cecf6df4ea6de66d
                 """
             }
         }
