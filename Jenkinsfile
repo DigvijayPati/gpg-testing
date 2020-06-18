@@ -8,7 +8,8 @@ pipeline {
     stages { 
         stage("verify tag"){
             steps{
-                sh """ 
+                sh """
+                    gpg --import-ownertrust $gpg_trust 
                     git verify-tag certified/safety_module/v1.0
                 """
             }
