@@ -9,6 +9,7 @@ pipeline {
         stage("verify tag"){
             steps{
                 sh """
+                    git tag
                     git verify-commit 8e716c2019dc0cff604ea51f498c3a4fa79a9ffb
                 """
             }
