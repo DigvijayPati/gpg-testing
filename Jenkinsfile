@@ -9,7 +9,7 @@ pipeline {
         stage("verify tag"){
             steps{
                 sh """
-                    git verify-tag certified/safety_module/v1.0
+                    git verify-commit c30df378d445be82b806f5523781e51114645596
                 """
             }
         }
