@@ -10,7 +10,7 @@ pipeline {
             steps{
                 sh """
                     git tag
-                    git verify-tag certified/safety_module/v*
+                    git verify-tag certified/safety_module/v1.0
                 """
             }
         }
