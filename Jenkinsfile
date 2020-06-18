@@ -14,5 +14,12 @@ pipeline {
                 """
             }
         }
-}
+        stage("verify tag"){
+            steps{
+                sh """ 
+                    git verify-tag certified/safety_module/v1.0
+                """
+            }
+        }
+   }
 }
