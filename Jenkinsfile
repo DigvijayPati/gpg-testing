@@ -10,6 +10,7 @@ pipeline {
                     gpg --import $gpg_secret
                 """
             }
+        }
         stage("list gpg configuration inside build container"){
             steps{
                 sh """
