@@ -4,6 +4,7 @@ pipeline {
         stage("list gpg configuration inside build container"){
             steps{
                 sh """
+                    gpg --version
                     gpg --list-keys
                 """
             }
