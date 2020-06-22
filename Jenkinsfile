@@ -1,7 +1,7 @@
 pipeline {
     agent { dockerfile true }
     environment {
-        gpg_secret = credentials("gpg-pub-key-frank")
+        gpg_secret = credentials("gpg-pub-key-james")
     }
     stages { 
         stage("Import GPG Keys") {
