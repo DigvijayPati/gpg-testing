@@ -1,13 +1,13 @@
 pipeline {
     agent { dockerfile true }
     environment {
-        gpg_secret = credentials("gpg-pub-key-james")
+        gpg_keychain = credentials("gpg-keychain-dj")
     }
     stages { 
         stage("Import GPG Keys") {
             steps {
                 sh """
-                    gpg --import $gpg_secret
+                    gpg2 --keyring $gpg_keychain  --export | gpg2 --import 
                 """
             }
         }
