@@ -7,7 +7,7 @@ pipeline {
         stage("Import GPG Keys") {
             steps {
                 sh """
-                    gpg2 --keyring $gpg_keychain  --export | gpg2 --import 
+                    gpg --keyring $gpg_keychain  --export | gpg --import 
                 """
             }
         }
