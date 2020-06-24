@@ -11,7 +11,6 @@ pipeline {
                 """
             }
         }
-    stages { 
         stage("list gpg configuration inside build container"){
             steps{
                 sh """
